@@ -37,7 +37,7 @@ jobs:
 
       - name: Debug environment variables
         run: printenv     
-        
+
       - name: Run tests with Pytest
         env:  # Add required environment variables 
           ADMIN_USER: admin
@@ -60,7 +60,7 @@ jobs:
       - name: Log in to DockerHub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }} #making github actions to work
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           
       - name: Build and push Docker image
