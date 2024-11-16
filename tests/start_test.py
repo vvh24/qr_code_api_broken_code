@@ -44,7 +44,7 @@ async def test_create_and_delete_qr_code():
             "url": "https://example.com",
             "fill_color": "red",
             "back_color": "white",
-            "size": 10,
+            "size": 10, #github actions test purposes
         }
         create_response = await ac.post("/qr-codes/", json=qr_request, headers=headers)
         assert create_response.status_code in [200, 201, 409]  # Created or already exists
